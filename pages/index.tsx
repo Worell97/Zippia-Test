@@ -10,15 +10,37 @@ import testJobs from '../testData'
 import Filters from '../components/filters';
 
 
-
+interface Filter {
+  companyName: string,
+  lastSevenDays: boolean
+  prevState: null
+}
 
 export default function Home() {
   const [jobs, setJobs] = useState([{}]);
-  const [filters, setFilters] = useState({ companyName: '', lastSevenDays: false })
+  const [filters, setFilters] = useState<Filter | null>({ companyName: '', lastSevenDays: false, prevState: null });
+  const [filteredData, setFilteredData] = useState([{}]);
+
+
+  useEffect(() => {
+    const newData = ApplyFilter(filters);
+    setFilteredData(newData);
+  }, [filters])
 
   useEffect(() => {
     loadJobs();
   }, [])
+
+  function ApplyFilter(filter: Filter | null) {
+    if (filter?.companyName == '' && !filter.lastSevenDays) {
+      return jobs
+    };
+
+    function checkCompany(value: any) {
+      return value.companyName.indexOf(filter?.companyName) >= 0;
+    }
+    return jobs.filter(checkCompany);
+  }
 
   async function loadJobs() {
     let params = {
@@ -64,7 +86,7 @@ export default function Home() {
           </LeftSide>
           <RightSide>
             <JobsList>
-              {jobs.map((job: any, index: number) => (
+              {filteredData.map((job: any, index: number) => (
                 <Card jobKey={index} jobTitle={job.jobTitle} companyName={job.companyName} jobDesc={job.jobDesc} />
               ))}
             </JobsList>

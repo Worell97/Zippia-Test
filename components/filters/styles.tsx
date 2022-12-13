@@ -9,8 +9,6 @@ export const FilterContainer = styled.div`
   flex-direction: column;
   border: 1px solid #d8dee2;
   padding: 10px;
-  margin: auto;
-  max-width: 30vw;
 `;
 
 export const FilterItem = styled.div`
@@ -18,6 +16,7 @@ export const FilterItem = styled.div`
 `;
 
 export const StyledInput = styled.input`
+  width: 100%;
   background-color: transparent;
   border: 1px solid #d4d4d4;
   border-radius: 4px;

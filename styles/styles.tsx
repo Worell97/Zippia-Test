@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const LeftSide = styled.div`
     width: 30%;
+    max-width: 320px;
     @media only screen and (max-width: 768px) {
         width: 100%;
     }
@@ -13,7 +14,6 @@ export const RightSide = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 5rem;
     @media only screen and (max-width: 768px) {
         flex-direction: row;
         width: 100%;
@@ -24,10 +24,12 @@ export const RightSide = styled.div`
 export const JobsContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin: 0 5rem;
+    justify-content: space-between;
+    grid-gap: 1.5rem;
     @media only screen and (max-width: 768px) {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         margin: 0 2rem;
     }
 `;
@@ -35,9 +37,13 @@ export const JobsContainer = styled.div`
 export const JobsList = styled.ul`
   display: flex;
   flex-direction: column;
-  max-width: 40vw;
+  width: 100%;
+  max-width: 700px;
+  margin: 0;
+  padding: 0;
   
   @media screen and (max-width: 768px){
+    flex-direction: row;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     
@@ -50,15 +56,22 @@ export const JobsList = styled.ul`
 
 export const Title = styled.h1`
     text-align: start;
-    margin-left: 3rem;
-    font-weight: 400;
+    margin-top: 36px;
+    margin-bottom: 36px;
+    font-weight: 500;
     @media only screen and (max-width: 768px) {
         text-align: center;        
     }
 `;
 
 export const Content = styled.main`
-    height: 100%;    
+    display: block;
+    height: 100%;  
+    max-width: 1140px;  
+    margin: 0 9rem;
+    @media only screen and (max-width: 1280px) {
+        margin: 0 5rem;    
+    }
 `;
 
 export const Footer = styled.footer`    

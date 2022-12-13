@@ -8,8 +8,6 @@ export const StyledCard = styled.li`
   padding: 5px;
   width: 100%;
   min-height: 6rem;
-  background: #eee;
-
   scroll-snap-align: start;
 
   @media screen and (max-width: 768px){

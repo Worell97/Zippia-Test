@@ -1,9 +1,16 @@
 import { DateOption, FilterContainer, FilterItem, StyledInput } from "./styles";
 import { Dispatch, SetStateAction } from "react";
 
+
+interface Filter {
+  companyName: string,
+  lastSevenDays: boolean
+  prevState: null
+}
+
 interface FiltersProps {
-  onChange: Dispatch<SetStateAction<{ companyName: string; lastSevenDays: boolean; }>>;
-  filters: { companyName: string; lastSevenDays: boolean; }
+  onChange: Dispatch<SetStateAction<Filter | null>>;
+  filters: Filter | null
 }
 
 export default function Filters({ onChange, filters }: FiltersProps) {
@@ -29,11 +36,11 @@ export default function Filters({ onChange, filters }: FiltersProps) {
     <FilterContainer>
       <FilterItem>
         <h3>Company Name</h3>
-        <StyledInput type={'text'} placeholder={'Company'} onChange={onCompanyChange} value={filters.companyName} />
+        <StyledInput type={'text'} placeholder={'Company'} onChange={onCompanyChange} value={filters?.companyName} />
       </FilterItem>
       <FilterItem>
         <h3>Date Posted</h3>
-        <DateOption selected={filters.lastSevenDays} onClick={onLastSevenDaysChange} >Last 7 days</DateOption>
+        <DateOption selected={filters?.lastSevenDays || false} onClick={onLastSevenDaysChange} >Last week</DateOption>
       </FilterItem>
     </FilterContainer>
   )
