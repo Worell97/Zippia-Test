@@ -70,7 +70,7 @@ export default function Home() {
           <RightSide>
             <JobsList>
               {jobs.map((job: any) => (
-                <Card jobTitle={job.jobTitle} companyName={job.companyName} jobDesc={job.jobDesc} />
+                <Card jobKey={job.jobKey} jobTitle={job.jobTitle} companyName={job.companyName} jobDesc={job.jobDesc} />
               ))}
             </JobsList>
           </RightSide>
