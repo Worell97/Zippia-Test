@@ -71,7 +71,7 @@ export const HiddenMenu = styled.div<HiddenMenuProps>`
     align-items: center;
     justify-content: space-evenly;
     transition: all .4s, easy-in-out;
-    transform: translateX(${props => props.visible ? '100%' : '0'});
+    transform: translateX(${props => props.visible ? '0' : '100%'});
     bottom: 0;
     right: 0;
     top: 0;

@@ -24,7 +24,7 @@ export const RightSide = styled.div`
 export const JobsContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 5rem;
     @media only screen and (max-width: 768px) {
         flex-direction: column;
@@ -35,6 +35,7 @@ export const JobsContainer = styled.div`
 export const JobsList = styled.ul`
   display: flex;
   flex-direction: column;
+  max-width: 40vw;
   
   @media screen and (max-width: 768px){
     overflow-x: auto;
@@ -57,7 +58,7 @@ export const Title = styled.h1`
 `;
 
 export const Content = styled.main`
-    height: 100%;
+    height: 100%;    
 `;
 
 export const Footer = styled.footer`    

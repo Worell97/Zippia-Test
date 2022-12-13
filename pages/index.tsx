@@ -20,10 +20,6 @@ export default function Home() {
     loadJobs();
   }, [])
 
-  useEffect(() => {
-    console.log(filters)
-  }, [filters])
-
   async function loadJobs() {
     let params = {
       "companySkills": true,
@@ -38,7 +34,6 @@ export default function Home() {
 
     try {
       await api.post('jobs', { params: params }).then((res: any) => {
-        console.log(!!res.data.jobs);
         if (!!res.data.jobs) {
           setJobs(testJobs);
         } else
@@ -69,8 +64,8 @@ export default function Home() {
           </LeftSide>
           <RightSide>
             <JobsList>
-              {jobs.map((job: any) => (
-                <Card jobKey={job.jobKey} jobTitle={job.jobTitle} companyName={job.companyName} jobDesc={job.jobDesc} />
+              {jobs.map((job: any, index: number) => (
+                <Card jobKey={index} jobTitle={job.jobTitle} companyName={job.companyName} jobDesc={job.jobDesc} />
               ))}
             </JobsList>
           </RightSide>

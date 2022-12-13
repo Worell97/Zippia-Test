@@ -10,6 +10,7 @@ export const FilterContainer = styled.div`
   border: 1px solid #d8dee2;
   padding: 10px;
   margin: auto;
+  max-width: 30vw;
 `;
 
 export const FilterItem = styled.div`
