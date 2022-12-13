@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Menu from '../components/menu';
 import api from '../services/api';
 import styles from '../styles/Home.module.css';
-import { Content, Footer, JobsContainer, JobsList, LeftSide, RightSide, Title } from './styles';
+import { Content, Footer, JobsContainer, JobsList, LeftSide, RightSide, Title } from '../styles/styles';
 import Card from '../components/card';
 import testJobs from '../testData'
 import Filters from '../components/filters';
