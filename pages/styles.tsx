@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LeftSide = styled.div`
     width: 30%;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 768px) {
         width: 100%;
     }
 `;
@@ -14,7 +14,7 @@ export const RightSide = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 5rem;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 768px) {
         flex-direction: row;
         width: 100%;
         margin: 0;
@@ -26,7 +26,7 @@ export const JobsContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin: 0 5rem;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 768px) {
         flex-direction: column;
         margin: 0 2rem;
     }
@@ -34,21 +34,24 @@ export const JobsContainer = styled.div`
 
 export const JobsList = styled.ul`
   display: flex;
+  flex-direction: column;
   
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  
-  
-  
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;    
+  @media screen and (max-width: 768px){
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    
+    
+    
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;  
+  }  
 `;
 
 export const Title = styled.h1`
     text-align: start;
     margin-left: 3rem;
     font-weight: 400;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 768px) {
         text-align: center;        
     }
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {FaBars} from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 
 export const StyledButton = styled.button`
     font-size: 1.5rem;
@@ -95,6 +95,7 @@ export const StyledSandWichButton = styled(FaBars)`
         transform: translate(-100%, 75%);
         font-size: 1,8rem;
         cursor: pointer;
+        margin: auto;
     }
 `;
 

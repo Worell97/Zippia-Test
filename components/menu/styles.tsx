@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
+interface HiddenMenuProps {
+    visible: boolean;
+}
+
 export const StyledMenu = styled.nav`
     box-sizing: border-box;
     min-height: 68px;
     max-height: 10vh;
+    min-width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,4 +63,20 @@ export const NavMenuItem = styled.button`
 export const Img = styled.img`  
     aspect-ratio: auto 160 / 36;
     height: 36px;  
+`;
+
+export const HiddenMenu = styled.div<HiddenMenuProps>`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all .4s, easy-in-out;
+    transform: translateX(${props => props.visible ? '100%' : '0'});
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background-color: #212529;
+    height: 250px;
+    width: 100%;
+    position: fixed;
 `;

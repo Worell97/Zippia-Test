@@ -17,8 +17,7 @@ export default function Home() {
   const [filters, setFilters] = useState({ companyName: '', lastSevenDays: false })
 
   useEffect(() => {
-    setJobs(testJobs)
-    //loadJobs();
+    loadJobs();
   }, [])
 
   useEffect(() => {
@@ -39,8 +38,12 @@ export default function Home() {
 
     try {
       await api.post('jobs', { params: params }).then((res: any) => {
-        console.log(res.data);
-        setJobs(res.data.jobs);
+        console.log(!!res.data.jobs);
+        if (!!res.data.jobs) {
+          setJobs(testJobs);
+        } else
+          setJobs(res.data.jobs);
+
       })
     } catch (error: any) {
       if (error?.response?.status != 404) {
