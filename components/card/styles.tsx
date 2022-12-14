@@ -11,7 +11,7 @@ export const StyledCard = styled.li`
   scroll-snap-align: start;
 
   @media screen and (max-width: 768px){
-    height: 40vh;
+    height: 33vh;
     flex-shrink: 0;
     border-radius: 10px;
     transform-origin: center center;

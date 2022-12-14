@@ -86,6 +86,7 @@ export const StyledNavBtnLink = styled.a`
 export const StyledSandWichButton = styled(FaBars)`
     display: none;
     color: #fff;
+    margin: 5rem;
 
     @media screen and (max-width: 768px){
         display: block;
@@ -95,7 +96,7 @@ export const StyledSandWichButton = styled(FaBars)`
         transform: translate(-100%, 75%);
         font-size: 1,8rem;
         cursor: pointer;
-        margin: auto;
+        margin: .8rem;
     }
 `;
 
