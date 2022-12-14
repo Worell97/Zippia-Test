@@ -14,7 +14,6 @@ function Menu() {
 
   function handleJobsClick(e: any) {
     e.preventDefault();
-    console.log('Teste')
     router.push('/jobs');
   };
 
