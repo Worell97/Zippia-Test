@@ -56,7 +56,7 @@ export default function Home() {
 
     try {
       await api.post('jobs', { params: params }).then((res: any) => {
-        if (!!res.data.jobs) {
+        if (res.data.totalJobs <= 0) {
           setJobs(testJobs);
         } else
           setJobs(res.data.jobs);
