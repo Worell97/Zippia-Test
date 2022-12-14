@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const newData = ApplyFilter(filters);
     setFilteredData(newData);
-  }, [filters])
+  }, [filters, jobs])
 
   useEffect(() => {
     loadJobs();
@@ -56,7 +56,7 @@ export default function Home() {
 
     try {
       await api.post('jobs', { params: params }).then((res: any) => {
-        if (res.data.totalJobs <= 0) {
+        if (res.data.totalJobs == 0) {
           setJobs(testJobs);
         } else
           setJobs(res.data.jobs);
