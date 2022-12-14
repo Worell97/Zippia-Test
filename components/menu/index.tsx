@@ -1,15 +1,21 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
-import { StyledMenu, StyledNavMenu, NavMenuItem, NavMenuHome, Img, HiddenMenu } from './styles';
-import { NavBtn, NavBtnLink, Button } from '../button';
-import { StyledButton, StyledSandWichButton } from '../button/styles';
-import Router from 'next/router';
+import { useState } from 'react';
+import { StyledMenu, NavMenuItem, NavMenuHome, Img, HiddenMenu } from './styles';
+import { NavBtn, NavBtnLink } from '../button';
+import { StyledSandWichButton } from '../button/styles';
+import router from 'next/router';
 
 function Menu() {
   const [hiddenMenuVisible, setHiddenMenuVisible] = useState(false);
 
   function handleHomeClick() {
-    Router.push('/');
+    router.push('/');
+  };
+
+  function handleJobsClick(e: any) {
+    e.preventDefault();
+    console.log('Teste')
+    router.push('/jobs');
   };
 
   function handleSandwichButtonClick(e: any) {
@@ -24,7 +30,7 @@ function Menu() {
       </NavMenuHome>
       <StyledSandWichButton onClick={handleSandwichButtonClick} />
       <HiddenMenu visible={hiddenMenuVisible} onClick={handleSandwichButtonClick}>
-        <NavMenuItem>
+        <NavMenuItem onClick={handleJobsClick}>
           JOBS
         </NavMenuItem>
         <NavMenuItem>
@@ -38,7 +44,7 @@ function Menu() {
         </NavBtnLink>
       </HiddenMenu>
       <NavBtn>
-        <NavMenuItem>
+        <NavMenuItem onClick={handleJobsClick}>
           JOBS
         </NavMenuItem>
         <NavMenuItem>

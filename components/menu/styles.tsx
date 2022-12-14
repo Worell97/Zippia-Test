@@ -51,7 +51,6 @@ export const NavMenuItem = styled.button`
     box-sizing: border-box;
     cursor: pointer;
     outline: none;
-    text-decoration: none;
     display: inline-block;
     transition: opacity .3s, easy-in-out;  
     &:hover,
